@@ -41,3 +41,6 @@ class Solution:
         nums = [nums[i] for i in range(len(nums)) if nums[i]-1 != i]
                 
         return nums
+
+# one more solution can be to make numbers negative at their particular index if nums are already
+# negative in their position means they are duplicate
