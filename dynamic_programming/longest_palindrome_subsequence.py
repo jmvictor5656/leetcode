@@ -30,7 +30,6 @@ class Solution:
         if not s:
             return 0
         
-        maximum = 0
         dp = [[0 for _ in range(len(s))] for _ in range(len(s))]
         
         for i in range(len(dp)):
