@@ -39,21 +39,26 @@ class Solution:
 
         pattern_char_count = dict(Counter(pattern))
 
-        for end in range(len_pattern-1, len_str):
-            if string[end] in pattern_char_count:
-                start = end - len_pattern + 1
+        window_char_counter = {}
+        start = 0
+        for end, char in enumerate(string):
 
-                window_char_counter = {}
+            if char not in window_char_counter:
+                window_char_counter[char] = 0
+            # add char in front of window
+            window_char_counter[char] += 1
 
-                while start != end + 1:
-                    start_char = string[start]
+            # remove char from end of window 
+            if end - start + 1 > len_pattern:
+                start_char = string[start]
+                window_char_counter[start_char] -= 1
 
-                    if start_char not in window_char_counter:
-                        window_char_counter[start_char] = 0
-                    window_char_counter[start_char] += 1
-                    start += 1
+                if window_char_counter[start_char] == 0:
+                    del window_char_counter[start_char]
+                start += 1
 
-                if window_char_counter == pattern_char_count:
-                    return True
+            if window_char_counter == pattern_char_count:
+                return True
 
         return False
+
