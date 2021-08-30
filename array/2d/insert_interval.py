@@ -43,7 +43,8 @@ newInterval.length == 2
 
 """
 class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        intervals.append(newInterval)
         if len(intervals) <=1:
             return intervals
         merge = []
@@ -63,4 +64,3 @@ class Solution:
                 start, end = interval
         merge.append([start, end])
         return merge
-                
