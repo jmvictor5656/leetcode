@@ -52,4 +52,6 @@ class Solution:
                     i2 += 1
                 if diff < 0:
                     i3 -= 1
+        # diff = target - sum
+        # sum = target - diff 
         return target - min_diff
