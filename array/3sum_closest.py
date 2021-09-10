@@ -45,6 +45,9 @@ class Solution:
                 if abs(diff) < abs(min_diff):
                     min_diff = diff
                 
+                # reduce the difference between target & three sum
+                # As if diff > 0 then try to reduce the diff by increasing num
+                # or if diff < 0 try to increase the diff by decreasing num
                 if diff > 0:
                     i2 += 1
                 if diff < 0:
