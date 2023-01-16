@@ -1,3 +1,15 @@
+"""
+Initialize an empty list to store the bridges and a variable to keep track of the current time.
+For each vertex in the graph, do the following:
+a. If the vertex has not been visited, call a depth-first search (DFS) function with the vertex as the starting point.
+b. In the DFS function, mark the vertex as visited and set its discovery time to the current time.
+c. For each unvisited neighbor of the vertex, call the DFS function with the neighbor as the starting point and set the vertex as the parent of the neighbor.
+d. Compare the discovery time and the low-link value of each neighbor and update the low-link value of the vertex accordingly.
+
+
+--------> e. If the low-link value of a neighbor is greater than the discovery time of the vertex,
+ add the edge between the vertex and the neighbor to the list of bridges.
+"""
 def find_bridges(graph):
     """
     Find all bridges in an undirected graph.
